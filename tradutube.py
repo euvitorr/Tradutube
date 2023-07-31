@@ -8,6 +8,7 @@ languages = ['en', 'zh-cn', 'es', 'ja', 'hi', 'ar', 'pt', 'bn', 'ru', 'de', 'jv'
 # Pede ao usuário que insira uma frase para ser traduzida
 phrase = input("Insira a frase para ser traduzida: ")
 
+filter_option = input("Escolha o filtro (dia/semana/mês/ano/recentes/none): ")
 
 # Pede ao usuário que escolha entre guia anônima ou normal
 tab_option = input("Escolha a opção de guia (anônima/normal): ")
@@ -38,8 +39,17 @@ for language in languages:
         # Cria a URL para a pesquisa no site de vídeos escolhido
         url = f"{site_url}{translation.replace(' ', '+')}"
 
-
-    # Restante do código do segundo commit...
+    # Constrói a URL de pesquisa com base na opção de filtro
+    if filter_option.lower() == "dia":
+        url += "&sp=EgQIAhAB"
+    elif filter_option.lower() == "semana":
+        url += "&sp=EgQIAxAB"
+    elif filter_option.lower() == "mês":
+        url += "&sp=EgQIBBAB"
+    elif filter_option.lower() == "ano":
+        url += "&sp=EgQIBRAB"
+    elif filter_option.lower() == "recentes":
+        url += "&sp=CAI%253D"
 
     # Abre o link em uma guia anônima ou normal do navegador
     if incognito_mode:
