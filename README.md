@@ -22,7 +22,7 @@ O TraduTube é um programa em Python que permite traduzir uma frase para vários
 
 3. Execute o programa usando o seguinte comando:
 
-python tradutube.py
+`python tradutube.py`
 
 4. Insira a frase que deseja traduzir.
 
